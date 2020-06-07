@@ -1,4 +1,4 @@
-from mod import *
+# from mod import *
 ## calculator class
 class calculator:
     def __init__(self,x,y):
