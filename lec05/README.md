@@ -1,6 +1,6 @@
 ## Lecture 05 클래스/모듈/패키지/예외처리
 
-#### 연산자
+#### 클래스
 
 <u>*js와 다른점*</u>
 
@@ -8,71 +8,54 @@
 
    x **or** y ,x **and** y ,**not** x
 
-  2.
-
- 	  elseif 대신 **elif**
-
-3. 
-
-   while ,if 조건 넣을때 괄호 사용 x
-
-   While num != 4 : 
-
-   ...
-
-4. 
-
-   num**++** 문법 작동 x
 
 
-
-<u>*파이썬만의 문법*</u>
+<u>*파이썬 문법*</u>
 
 1. 
 
-   x **in** [리스트, 튜플, 문자열]
+   class name[(상속클래스이름)]:
 
-   x **not in** [리스트, 튜플, 문자열]
+   ​	num =0;
+
+   ​	def _ _init__(**<u>self</u>**,name):  // 인스턴스 생성할때 자동으로 호출되는함수
+
+   ​		self.name = name
+
+   ​	def method(**<u>self</u>**,x,y):
+
+   ​	def _ _del__(**<u>self</u>**):  // 인스턴스 소멸할때 자동으로 호출되는함수
+
+   ​		self.name = undefined		
+
+   **<u> 클래스 내에 함수는 첫번째 인자로 무조건 self를 받아야함</u>**
 
 2. 
 
-   아무런 동작하고 싶지 않을때
+   인스턴스 말고 classname.method() 로 호출할 경우에는 꼭 self에 인스턴스를 넣어줘야함!
 
-   if(true):
-
-   ​	**pass**	
+   인스턴스로  instance.method()  호출할경우에는  self 생략해도 가능
 
 3. 
 
-   **for 변수 in [리스트,튜플, 문자열]:**
-
-   ```python
-   for (first,last) in [("one",1),("two",2),("three",3)]:
-   ```
-
-4. 
-
-   range(1,11)  1~10까지 숫자 리스트 만들어주는 함수
-
-5. 
-
-   print(~~~,end =" ") 
-
-   end =" " 는 줄바꿈 하지 않고 띄어쓰기만 
-
-6. 
-
-   리스트안에 제어문 가능
-
-   [표현식 for 변수 in [리스트, 튜플, 문자열] if 조건] 
-
-   중첩 for문도 사용가능
-
-   리스트안에서 쓰이는 for 문에는 : 없음
-
-   ```python
-   result = [n*3 for n in list]
-   result = [n*3 for n in list if n%2 ==0 ]
-   ```
+   연산자 오버로딩 : 연산자를 객체끼리 사용할수 있게 하는 기법
 
    
+
+   ```python
+   class teacher:
+       def __init__(self,name):
+           self.name = name;
+       def __add__(self, other): ## 연산자 오버로딩
+           print("%s 선생님은 %s 학생을 가르칩니다." % (self.name,other.name))
+   
+   class student:
+       def __init__(self, name):
+           self.name = name;
+   
+   teacher01 = teacher("김떙떙")
+   student01 = student("안떙떙")
+   
+   teacher01 + student01 ## 연산자 오버로딩
+   ```
+
