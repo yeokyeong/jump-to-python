@@ -1,3 +1,4 @@
+from mod import *
 ## calculator class
 class calculator:
     def __init__(self,x,y):
@@ -48,3 +49,4 @@ teacher01 + student01
 teacher01.angry(student01)
 
 ##module
+print(safe_sum(1,2))
